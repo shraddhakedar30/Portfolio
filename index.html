@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Shraddha Kedar</title>
+<meta name="description" content="Service &amp; UX designer based in Dublin. MSc HCI, UCD." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{--ink:#16161a;--muted:#6c6c74;--faint:#9a9aa2;--line:#e7e7e4;
+    --bg:#fbfbf9;--panel:#f3f3ef;--accent:#1f4ed8;--maxw:760px;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:"Inter",-apple-system,BlinkMacSystemFont,sans-serif;
+    font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+  a{color:inherit;text-decoration:none}
+  .mono{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--faint)}
+  nav.top{border-bottom:1px solid var(--line);background:rgba(251,251,249,.85);backdrop-filter:saturate(180%) blur(8px);position:sticky;top:0;z-index:10}
+  nav.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{font-weight:600;letter-spacing:-.01em}
+  .navlinks{display:flex;gap:26px;font-size:15px}
+  .navlinks a{color:var(--muted);transition:color .18s ease}
+  .navlinks a:hover{color:var(--ink)}
+  .hero{padding:76px 0 0}
+  .hero .eyebrow{margin-bottom:20px}
+  h1{font-size:46px;font-weight:600;letter-spacing:-.03em;line-height:1.04}
+  .hero .lead{font-size:20px;color:var(--muted);max-width:600px;margin-top:22px;line-height:1.5}
+  .coverimg{width:100%;border:1px solid var(--line);border-radius:14px;display:block;margin:44px 0 8px}
+  .showcase{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:44px 0 8px}
+  .showcase img{width:100%;border:1px solid var(--line);border-radius:14px;display:block;background:#fff}
+  .meta{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding:34px 0;border-bottom:1px solid var(--line)}
+  .meta h4{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);font-weight:500;margin-bottom:10px}
+  .meta ul{list-style:none}.meta li{font-size:15px;color:var(--ink);padding:1px 0}
+  section.block{padding:52px 0 0}
+  .block h2{font-size:13px;font-family:"JetBrains Mono",monospace;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);font-weight:500;margin-bottom:18px}
+  .block h3{font-size:27px;font-weight:600;letter-spacing:-.02em;line-height:1.15;margin-bottom:18px}
+  .block p{color:#33333a;margin-bottom:18px;max-width:640px}
+  .block p b{color:var(--ink);font-weight:600}.block p:last-child{margin-bottom:0}
+  .stats{display:grid;gap:18px;margin:8px 0}
+  .stats.s4{grid-template-columns:repeat(4,1fr)}.stats.s3{grid-template-columns:repeat(3,1fr)}
+  .stat .n{font-size:30px;font-weight:600;letter-spacing:-.02em}
+  .stat .l{font-size:13px;color:var(--muted);line-height:1.35;margin-top:4px}
+  .cards{display:grid;gap:14px;margin-top:8px}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:8px}
+  .card{border:1px solid var(--line);border-radius:12px;padding:20px 22px;background:#fff}
+  .card .kicker{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;display:flex;justify-content:space-between}
+  .card .kicker .imp{color:var(--faint)}
+  .card h5{font-size:18px;font-weight:600;letter-spacing:-.01em;margin-bottom:6px}
+  .card p{font-size:15px;color:var(--muted);margin:0;max-width:none}
+  .duo{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px}
+  .duo img{width:100%;border:1px solid var(--line);border-radius:12px;display:block;background:#fff}
+  .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px;margin-top:8px}
+  .gallery.wide{grid-template-columns:1fr;gap:18px}
+  .gallery figure{margin:0}
+  .gallery img{width:100%;border:1px solid var(--line);border-radius:12px;display:block;background:#fff}
+  .gallery figcaption{font-size:12px;color:var(--faint);text-align:center;margin-top:8px;font-family:"JetBrains Mono",monospace;letter-spacing:.03em}
+  .tallwrap{display:flex;justify-content:center;margin-top:18px}
+  .tallwrap figure{margin:0;max-width:440px;width:100%}
+  .tallwrap img{width:100%;border:1px solid var(--line);border-radius:12px;display:block}
+  .tallwrap figcaption{font-size:12px;color:var(--faint);text-align:center;margin-top:8px;font-family:"JetBrains Mono",monospace;letter-spacing:.03em}
+  .personas{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px}
+  .persona{border:1px solid var(--line);border-radius:14px;padding:22px;background:#fff}
+  .persona-head{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+  .persona-head img{width:52px;height:52px;border-radius:50%;object-fit:cover;border:1px solid var(--line);background:var(--panel)}
+  .persona-head h5{font-size:19px;font-weight:600;letter-spacing:-.01em}
+  .persona-head .role{font-size:13px;color:var(--muted)}
+  .persona .facts{font-size:13px;color:var(--muted);margin-bottom:16px;line-height:1.55}
+  .persona .gf{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .persona .gf h6{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.05em;text-transform:uppercase;color:var(--faint);margin-bottom:6px}
+  .persona .gf ul{list-style:none}.persona .gf li{font-size:13px;color:#33333a;padding:2px 0}
+  .tablewrap{overflow-x:auto;margin-top:8px;border:1px solid var(--line);border-radius:12px}
+  table{border-collapse:collapse;width:100%;font-size:14px;min-width:520px}
+  th,td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+  thead th{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);font-weight:500;background:var(--panel)}
+  tbody tr:last-child td{border-bottom:none}
+  td.yes{color:#1a7f48;font-weight:600}td.no{color:#b23b3b}
+  td:first-child{font-weight:500;color:var(--ink)}
+  td .sub{display:block;color:var(--faint);font-size:12px;margin-top:3px}
+  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px}
+  .col{border:1px solid var(--line);border-radius:12px;padding:20px 22px;background:#fff}
+  .col h5{font-size:13px;font-family:"JetBrains Mono",monospace;letter-spacing:.05em;text-transform:uppercase;margin-bottom:14px}
+  .col.good h5{color:#1a7f48}.col.fix h5{color:#b23b3b}
+  .col ul{list-style:none}
+  .col li{font-size:15px;color:var(--muted);padding-left:18px;position:relative;margin-bottom:10px;line-height:1.45}
+  .col li:last-child{margin-bottom:0}
+  .col li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%}
+  .col.good li::before{background:#1a7f48}.col.fix li::before{background:#b23b3b}
+  blockquote{border-left:2px solid var(--accent);padding:6px 0 6px 24px;margin:8px 0 0;font-size:22px;line-height:1.45;letter-spacing:-.01em;color:var(--ink);max-width:640px}
+  blockquote cite{display:block;font-style:normal;font-size:14px;color:var(--faint);margin-top:14px;font-family:"JetBrains Mono",monospace;letter-spacing:.03em}
+  .rule{height:1px;background:var(--line);margin:56px 0 0}
+  .projnav{padding:56px 0 0}
+  .projnav .row{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+  .projnav a{font-size:14px;border:1px solid var(--line);border-radius:999px;padding:7px 14px;color:var(--muted);transition:all .18s ease}
+  .projnav a:hover{border-color:var(--accent);color:var(--accent)}
+  .projnav a.current{background:var(--ink);color:#fff;border-color:var(--ink)}
+  footer{margin-top:64px;border-top:1px solid var(--line);padding:30px 0 64px}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+  footer span{font-size:13px;color:var(--faint)}
+  a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:3px}
+  /* index work list */
+  .intro{padding:88px 0 8px}
+  .intro h1.t{font-size:21px;font-weight:500;line-height:1.55;letter-spacing:-.01em;max-width:640px}
+  .intro h1.t b{font-weight:600}
+  .lead-name{display:block;font-size:13px;font-family:"JetBrains Mono",monospace;text-transform:uppercase;letter-spacing:.06em;color:var(--faint);margin-bottom:14px}
+  .sec-label{padding-top:64px;margin-bottom:8px;border-top:1px solid var(--line)}
+  .sec-label.first{border-top:none;padding-top:56px}
+  .project{display:block;padding:30px 0;border-bottom:1px solid var(--line)}
+  .project-top{display:flex;align-items:baseline;justify-content:space-between;gap:18px}
+  .project h2{font-size:25px;font-weight:600;letter-spacing:-.02em;line-height:1.2;transition:color .18s ease}
+  .project h2 .arrow{display:inline-block;margin-left:4px;transform:translateX(-4px);opacity:0;transition:transform .22s ease,opacity .22s ease}
+  a.project:hover h2{color:var(--accent)}
+  a.project:hover h2 .arrow{transform:translateX(2px);opacity:1}
+  .project p.desc{color:var(--muted);font-size:16px;margin-top:10px;max-width:560px}
+  .tags{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px}
+  .tag{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.03em;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+  .project.upcoming{cursor:default}
+  .soon{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:#946200;background:#fbf2dc;border:1px solid #f0e2bd;border-radius:999px;padding:3px 10px}
+  .about p,.contact p{color:var(--muted);max-width:600px;margin-bottom:18px}
+  .about p b{color:var(--ink);font-weight:600}.about p:last-child{margin-bottom:0}
+  .contact .crow{display:flex;flex-wrap:wrap;gap:14px 26px;margin-top:18px;font-size:15px}
+  .contact .crow a{color:var(--ink);border-bottom:1px solid var(--line);padding-bottom:2px;transition:border-color .18s,color .18s}
+  .contact .crow a:hover{border-color:var(--accent);color:var(--accent)}
+  @media (max-width:680px){
+    h1{font-size:34px}.hero .lead{font-size:18px}
+    .meta{grid-template-columns:1fr;gap:20px}
+    .stats.s4{grid-template-columns:1fr 1fr}.stats.s3{grid-template-columns:1fr}
+    .grid2,.twocol,.personas{grid-template-columns:1fr}
+    .showcase{grid-template-columns:1fr 1fr}
+    .navlinks{gap:16px;font-size:14px}.project h2{font-size:22px}blockquote{font-size:19px}
+  }
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<nav class="top"><div class="wrap">
+  <a href="index.html" class="brand">Shraddha Kedar</a>
+  <div class="navlinks">
+    <a href="index.html#work">Work</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#contact">Contact</a>
+  </div></div></nav>
+<main class="wrap" id="top">
+  <section class="intro">
+    <span class="mono eyebrow" style="margin-bottom:22px;display:block">Service &amp; UX Design &middot; Dublin</span>
+    <h1 class="t"><span class="lead-name">Shraddha Kedar</span>
+      I'm Shraddha. A service &amp; UX designer finishing an <b>MSc in Human-Computer Interaction at UCD</b>. I research why everyday services fail people, then redesign them. I care about <b>public services, civic tech, and the things people have no choice but to use</b>.</h1>
+  </section>
+
+  <section id="work">
+    <div class="sec-label first"><span class="mono">Selected work</span></div>
+
+    <a class="project" href="ridesafe.html">
+      <div class="project-top"><h2>Dublin RideSafe<span class="arrow">&rarr;</span></h2><span class="mono">2025</span></div>
+      <p class="desc">Dublin's cycling infrastructure is fragmented and 98% of cycling collisions end in injury. I researched why, then designed a service connecting cyclists, hazard data, and city authorities in one place.</p>
+      <div class="tags"><span class="tag">UX Research</span><span class="tag">Service Design</span><span class="tag">iOS</span></div>
+    </a>
+
+    <a class="project" href="leapcard.html">
+      <div class="project-top"><h2>TFI Leap Card, Redesign<span class="arrow">&rarr;</span></h2><span class="mono">2025</span></div>
+      <p class="desc">The Leap Card app made topping up harder than it needed to be. Starting from 6,400+ real reviews, I redesigned the core flows: a resilient NFC top-up, custom amounts, proactive alerts, and live transport.</p>
+      <div class="tags"><span class="tag">UX Redesign</span><span class="tag">Mobile</span><span class="tag">Accessibility</span></div>
+    </a>
+
+    <div class="project upcoming">
+      <div class="project-top"><h2>IBM &times; UCD, HCI Partnership</h2><span class="soon">Coming soon</span></div>
+      <p class="desc">An upcoming HCI partnership project with IBM, exploring how people interact with enterprise and AI-driven systems. Currently in progress, case study to follow.</p>
+      <div class="tags"><span class="tag">HCI Research</span><span class="tag">Industry Partnership</span><span class="tag">In progress</span></div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="sec-label"><span class="mono">About</span></div>
+    <p>I'm a Computer Engineering graduate finishing an MSc in <b>Human-Computer Interaction at UCD</b>. Originally from Mumbai, I moved to Dublin in 2025 and immediately started noticing services that needed redesigning.</p>
+    <p>My work sits at the intersection of <b>research, systems thinking, and design</b>. I'm less interested in making things look good and more interested in making them work better, for the people who have no choice but to use them.</p>
+    <p>I'm drawn to <b>public sector and civic design</b> because those services affect everyone, and they're often the least designed.</p>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="sec-label"><span class="mono">Contact</span></div>
+    <p style="margin-top:18px">Open to graduate roles in service design, UX research, and civic tech. Dublin-based, available from May 2026.</p>
+    <div class="crow">
+      <a href="mailto:smkedar30@gmail.com">smkedar30@gmail.com</a>
+      <a href="https://www.linkedin.com/in/shraddha-kedar-2995771a2" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="Resume_DCC_Service_designer.pdf">Download CV</a>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap">
+  <span>Shraddha Kedar, Portfolio 2026</span>
+  <span>Dublin &middot; UX &amp; Service Design</span>
+</div></footer>
+</body></html>
